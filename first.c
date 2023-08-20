@@ -14,15 +14,17 @@ void print_string(char *s);
 int _printf(const char *format, ...)
 {
 	va_list arr;
-       	unsigned int i = 0, count = 0;
+	unsigned int i = 0, count = 0;
 	char *s, a;
-        
-        if (!format)
-		return(-1);
+
+	if (!format)
+		return (-1);
 
 	va_start(arr, format);
 	if (format != NULL)
 	{
+		if ((_strcmp(format, "% ")) || (_strcmp(format, "\0 ")))
+			return (-1);
 		while (format[i] != '\0')
 		{
 			count++;

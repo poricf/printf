@@ -51,7 +51,7 @@ void print_string(char *s)
 {
 	int k;
 	for (k = 0; s[k]; k++)
-		putchar(s[k]);
+		_putchar(s[k]);
 }
 /**
  * _strlenn - to find the length of string
@@ -69,4 +69,30 @@ int strlenn (const char *s)
 
 	return (len);
 }
+/**
+ * _strcmp = = comparest to strings
+ *
+ * @s: first string
+ * @t second string
+ * Return: 1 or 0
+ */
 
+int _strcmp(const char *s, const char *t)
+{
+        int i, len1, len2;
+
+        len1 = strlenn(s);
+        len2 = strlenn(t);
+        if (len1 == len2)
+        {
+                for (i = 0; len1; i++)
+        {
+                if (s[i] != t[i])
+                        return (0);
+        }
+        }
+        else
+                return (0);
+
+        return (1);
+}
