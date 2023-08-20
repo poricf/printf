@@ -7,16 +7,17 @@
  * Return: number of elements given to it
  */
 
+
 int _printf(const char *format, ...)
 {
 	va_list arr;
-	unsigned int i = 0, count = 0;
+       	int i = 0, count = 0;
 
 	if (!format)
 		return (-1);
 
 	va_start(arr, format);
-	while (format[i])
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
@@ -29,35 +30,15 @@ int _printf(const char *format, ...)
 				count++;
 				i++;
 			}
+			else if (cmp_func(format[i + 1]) != NULL)
+			{
+				count += (cmp_func(format[i + 1]))(arr);
+				i++;
+			}
 			else
 			{
-				char found = 0;
-				myprintf printf[] = {
-					{'c', print_char},
-					{'s', print_string},
-					{'d', print_num},
-					{'i', print_num},
-					{'\0', NULL}
-				};
-
-				int k = 0;
-				while (printf[k].p != '\0')
-				{
-					if (printf[k].p == format[i + 1])
-					{
-						count += (printf[k].func)(arr);
-						found = 1;
-						break;
-					}
-					k++;
-				}
-
-				if (!found)
-				{
-					_putchar(format[i]);
-					count++;
-				}
-				i++;
+				_putchar(format[i]);
+				count++;
 			}
 		}
 		else
