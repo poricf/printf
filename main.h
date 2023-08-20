@@ -5,5 +5,8 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void print_num(int num);
+int print_num(int num);
+void print_string(char *s);
+int strlenn(const char *s);
+
 #endif /* MAIN_H */

@@ -66,16 +66,3 @@ int _printf(const char *format, ...)
 	return (count);
 }
 
-/**
- * print_string - print string
- *
- * @s: string to be printed
- * Return: void
- */
-void print_string(char *s)
-{
-	int k;
-
-	for (k = 0; s[k]; k++)
-		_putchar(s[k]);
-}
