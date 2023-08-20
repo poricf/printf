@@ -5,7 +5,7 @@
  * print_string - printed
  *
  * @s: string to be printed
- * return: number of bytes printed
+ * Return: number of bytes printed
  */
 
 int print_string(va_list s)
@@ -15,9 +15,9 @@ int print_string(va_list s)
 
 	str = va_arg(s, char*);
 	for (k = 0; str[k] != '\0'; k++)
-	{	
+	{
 		_putchar(str[k]);
 	}
-	
+
 	return (k);
 }

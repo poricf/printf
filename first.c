@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arr;
-       	int i = 0, count = 0;
+	int i = 0, count = 0;
 
 	if (!format)
 		return (-1);

@@ -9,7 +9,7 @@
 
 int (*cmp_func(const char a))(va_list)
 {
-       myprintf	printf[] = {
+	myprintf printf[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_num},
