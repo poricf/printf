@@ -25,43 +25,40 @@ int _printf(const char *format, ...)
 	{
 		while (format[i] != '\0')
 		{
+			count++;
 			if (format[i] == '%' && format[i + 1] == '%')
 			{
+				count--;
 				_putchar('%');
-				count++;
-				i++;
 			}
 			else if (format[i] == '%' && format[i + 1] != '%' && format[i - 1] != '%')
 			{
+				count--;
 				i++;
 				switch (format[i])
 				{
 					case 'c':
 						a = va_arg(arr, int);
 						_putchar(a);
-						count++;
 						break;
 					case 's':
 						s = va_arg(arr, char *);
 						print_string(s);
-						count += strlen(s);
 						break;
 					case 'd':
+						print_num(va_arg(arr, int));
+						break;
 					case 'i':
 						print_num(va_arg(arr, int));
 						break;
 					default:
 						_putchar(format[i]);
 						i++;
-						count += 2;
-						break;
+						continue;
 				}
 			}
 			else if (format[i] != '%')
-			{
 				_putchar(format[i]);
-				count++;
-			}
 			i++;
 		}
 	}
@@ -82,20 +79,3 @@ void print_string(char *s)
 	for (k = 0; s[k]; k++)
 		_putchar(s[k]);
 }
-
-/**
- * _strlen - calculate length of string
- *
- * @s: input string
- * Return: length of string
- */
-
-int _strlen(char *s)
-{
-	int i;
-	for (int i = 0; s[i] != '\0'; i++)
-		;
-
-	return i;
-}
-
