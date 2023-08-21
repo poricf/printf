@@ -16,7 +16,10 @@ int print_string(va_list s)
 	str = va_arg(s, char*);
 
 	if (str == NULL)
-		return (5);
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	for (k = 0; str[k] != '\0'; k++)
 	{
 		_putchar(str[k]);
