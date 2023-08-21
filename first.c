@@ -15,6 +15,8 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
+	else if (format == "%" || format == "% ")
+		return (-1);
 	
 	va_start(arr, format);
 	while (format[i] != '\0')
@@ -23,9 +25,6 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '\0')
 				return (-1);
-			else if (format[i + 1] == ' ')
-				return (-1);
-
 			else if (format[i + 1] == '%')
 			{
 				_putchar('%');
