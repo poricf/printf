@@ -14,6 +14,9 @@ int print_string(va_list s)
 	int k;
 
 	str = va_arg(s, char*);
+
+	if (str == NULL)
+		return (5);
 	for (k = 0; str[k] != '\0'; k++)
 	{
 		_putchar(str[k]);
