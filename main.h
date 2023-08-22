@@ -11,10 +11,11 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_num(va_list n);
 int print_string(va_list s);
-int strlenn(const char *s);
+int _strlen(const char *s);
 int _strcmp(const char *s, const char *t);
 int (*cmp_func(const char a))(va_list);
 int print_char(va_list arr);
+void print_bin(unsigned int num);
 
 /**
  * struct types - specifier structure for printf
