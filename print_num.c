@@ -5,12 +5,12 @@
  * print_num - prints number
  *
  * @n: number to be printed
- * Return: void
+ * Return: nBytes printed
  */
 
 int print_num(va_list n)
 {
-	long num = va_arg(n,long);
+	long int num = va_arg(n,int);
 	char digit[10];
 	int numDigits = 0;
 	int counter = 0;
@@ -25,7 +25,7 @@ int print_num(va_list n)
 	{
 		_putchar('-');
 		counter++;
-		num = -num;
+		num = -1 * num;
 	}
 	while (num > 0)
 	{
