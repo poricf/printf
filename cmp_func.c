@@ -14,7 +14,7 @@ int (*cmp_func(const char a))(va_list)
 		{'s', print_string},
 		{'d', print_num},
 		{'i', print_num},
-		{'u', print_unsigned},
+		{'b', print_bin},
 		{'\0', NULL}
 	};
 
