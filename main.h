@@ -16,6 +16,7 @@ int _strcmp(const char *s, const char *t);
 int (*cmp_func(const char a))(va_list);
 int print_char(va_list arr);
 void print_bin(unsigned int num);
+int print_unsigned(va_list n);
 
 /**
  * struct types - specifier structure for printf
