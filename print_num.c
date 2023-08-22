@@ -10,7 +10,7 @@
 
 int print_num(va_list n)
 {
-	long int num = va_arg(n,int);
+	long int num = va_arg(n, int);
 	char digit[10];
 	int numDigits = 0;
 	int counter = 0;
