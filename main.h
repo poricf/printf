@@ -15,7 +15,7 @@ int _strlen(const char *s);
 int _strcmp(const char *s, const char *t);
 int (*cmp_func(const char a))(va_list);
 int print_char(va_list arr);
-void print_bin(unsigned int num);
+int print_bin(va_list arr);
 int print_unsigned(va_list n);
 
 /**
