@@ -46,5 +46,5 @@ int  print_bin(va_list arr)
 	}
 
 	free(string);
-	return (0);
+	return (len);
 }
