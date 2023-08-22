@@ -9,7 +9,7 @@
 
 int  print_bin(va_list arr)
 {
-	unsigned int num = va_arg(arr, unsigned int);
+	unsigned long int num = va_arg(arr, unsigned int);
 	unsigned int i, rem, dup;
 	char *string;
 	char c;
