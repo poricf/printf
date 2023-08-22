@@ -5,7 +5,7 @@
  * print_num - prints number
  *
  * @n: number to be printed
- * Return: void
+ * Return: nBytes printed
  */
 
 int print_num(va_list n)
